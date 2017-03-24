@@ -60,7 +60,9 @@ shinyServer(function(input, output) {
                                                requestParams,sep="=",collapse="&"))))$value;
     
     res.df <- data.frame(t(sapply(result,function(x){data.frame(x,stringsAsFactors = FALSE)})));
+    res.df <- data.frame(sapply(res.df, unlist));
+    write.csv(res.df,"res.csv");
     hist(as.numeric(res.df$Value), main="Value");
-    barplot(table(unlist(res.df[,1])), main=colnames(res.df)[1]);
+    barplot(table(res.df[,1]), main=colnames(res.df)[1]);
   });
 })
