@@ -10,16 +10,6 @@ if(file.exists("api_key.txt")){
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
    
-  output$distPlot <- renderPlot({
-    
-    # generate bins based on input$bins from ui.R
-    x    <- faithful[, 2] 
-    bins <- seq(min(x), max(x), length.out = input$bins + 1)
-    
-    # draw the histogram with the specified number of bins
-    hist(x, breaks = bins, col = 'darkgray', border = 'white')
-    
-  });
   output$statsQuery <- renderDataTable({
     if(input$apikey != ""){
       api.key <- input$apikey;
@@ -42,11 +32,11 @@ shinyServer(function(input, output) {
     result <- fromJSON(getURL(url=paste0(requestURL,codeID,"?",
                                          paste(names(requestParams),
                                                requestParams,sep="=",collapse="&"))))$value;
-    
     res.table <- sapply(result,function(x){data.frame(x,stringsAsFactors = FALSE)});
-    return(data.frame(t(res.table)));
+    return((t(res.table)));
   });
   output$statsGraph <- renderPlot({
+    par(mfrow=c(2,1));
     if(input$apikey != ""){
       api.key <- input$apikey;
     }
@@ -70,7 +60,7 @@ shinyServer(function(input, output) {
                                                requestParams,sep="=",collapse="&"))))$value;
     
     res.df <- data.frame(t(sapply(result,function(x){data.frame(x,stringsAsFactors = FALSE)})));
-    print(range(as.numeric(res.df$Value)));
-    hist(as.numeric(res.df$Value));
+    hist(as.numeric(res.df$Value), main="Value");
+    barplot(table(unlist(res.df[,1])), main=colnames(res.df)[1]);
   });
 })
