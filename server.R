@@ -21,7 +21,7 @@ shinyServer(function(input, output) {
                        "$select"=input$select,
                        "$order"=input$orderby,
                        "$top"=input$top,
-                       "$skip"=input$skip,
+                       #"$skip"=input$skip,
                        "$count"=tolower(str(input$count))
                        );
     requestParams <- requestParams[requestParams != ""];
@@ -29,9 +29,11 @@ shinyServer(function(input, output) {
     if(input$tablecode != ""){
       codeID <- paste0("TABLECODE",input$tablecode);
     }
-    result <- fromJSON(getURL(url=paste0(requestURL,codeID,"?",
-                                         paste(names(requestParams),
-                                               requestParams,sep="=",collapse="&"))))$value;
+    resultText <- getURL(url=paste0(requestURL,codeID,"?",
+                                    paste(names(requestParams),
+                                          requestParams,sep="=",collapse="&")));
+    print(substring(resultText,1,200));
+    result <- fromJSON(resultText)$value;
     res.table <- sapply(result,function(x){data.frame(x,stringsAsFactors = FALSE)});
     return((t(res.table)));
   });

@@ -16,17 +16,15 @@ shinyUI(fluidPage(
     sidebarPanel(
       textInput("apikey", label = "API Key",placeholder = "Data access key"),
       selectInput("tablecode",label = "Table Code", choices = tableCodes),
-      textInput("expand", label = "Expand thingy"),
+#      textInput("expand", label = "Expand"),
       textInput("filter", label = "FILTER query"),
       textInput("select", label = "SELECT query"),
       textInput("orderby", label = "Order By"),
       numericInput("top", "Display first n records", 
                    value=1000, step = 100),
-      numericInput("skip", "Skip first n records", 
-                   value=0, step = 100),
-      checkboxInput("count", label = "Include record counts"), 
-      numericInput("skip", "Skip first n records", 
-                   value=0, step = 100)
+#      numericInput("skip", "Skip first n records", 
+#                   value=0, step = 100),
+      checkboxInput("count", label = "Include record counts")
     ),
     
     # Show a plot of the generated distribution
