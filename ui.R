@@ -1,5 +1,10 @@
 library(shiny)
 
+rowCount.df <- read.csv("record.sizes.dotstat.txt");
+tableCodes <- rowCount.df$TableCode;
+names(tableCodes) <- sprintf("%s (%d rows)", rowCount.df$TableCode, 
+                             rowCount.df$RowCount);
+
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
   
@@ -10,6 +15,7 @@ shinyUI(fluidPage(
   sidebarLayout(
     sidebarPanel(
       textInput("apikey", label = "API Key",placeholder = "Data access key"),
+      selectInput("tablecode",label = "Table Code", choices = tableCodes),
       textInput("expand", label = "Expand thingy"),
       textInput("filter", label = "FILTER query"),
       textInput("select", label = "SELECT query"),
@@ -17,13 +23,16 @@ shinyUI(fluidPage(
       numericInput("top", "Display first n records", 
                    value=1000, step = 100),
       numericInput("skip", "Skip first n records", 
+                   value=0, step = 100),
+      checkboxInput("count", label = "Include record counts"), 
+      numericInput("skip", "Skip first n records", 
                    value=0, step = 100)
-      #sliderInput("count", label = "Result count", min=1, max=1000, value=1000), 
     ),
     
     # Show a plot of the generated distribution
     mainPanel(
-       textOutput("statsQuery")
+       dataTableOutput("statsQuery"),
+       plotOutput("statsGraph")
     )
   )
 ))
