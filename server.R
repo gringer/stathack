@@ -2,7 +2,7 @@ library(shiny)
 library(RCurl);
 library(rjson);
 
-api.key <- scan("api_key.txt", what=character());
+api.key <- scan("api_key.txt", what=character(), quiet=TRUE);
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
