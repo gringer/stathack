@@ -70,6 +70,7 @@ shinyServer(function(input, output) {
                                                requestParams,sep="=",collapse="&"))))$value;
     
     res.df <- data.frame(t(sapply(result,function(x){data.frame(x,stringsAsFactors = FALSE)})));
-    hist(res.df$value);
+    print(range(as.numeric(res.df$Value)));
+    hist(as.numeric(res.df$Value));
   });
 })
