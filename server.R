@@ -2,7 +2,7 @@ library(shiny)
 library(RCurl);
 library(rjson);
 
-#api.key <- scan("api_key.txt", what=character(), quiet=TRUE);
+api.key <- scan("api_key.txt", what=character(), quiet=TRUE);
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
@@ -18,9 +18,9 @@ shinyServer(function(input, output) {
     
   });
   output$statsQuery <- renderText({
-    #if(input$apikey != ""){
+    if(input$apikey != ""){
       api.key <- input$apikey;
-    #}
+    }
     requestURL <- "https://statisticsnz.azure-api.net/nzdotstat/v1.0/odata/Catalogue?";
     requestParams <- c("subscription-key"=api.key,
                        "$expand"=input$expand,
