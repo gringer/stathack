@@ -38,7 +38,8 @@ shinyUI(pageWithSidebar(
       tabsetPanel(
         tabPanel("Table",
           dataTableOutput("statsQuery")),
-        conditionalPanel("input.tablecode != 'Catalogue'",tabPanel("Graphs",
+        tabPanel("Graphs",
+          conditionalPanel("input.tablecode != 'Catalogue'",
           plotOutput("statsGraph")))
     ))
   )
