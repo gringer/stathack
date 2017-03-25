@@ -1,0 +1,51 @@
+"","Id","Category","SubCategory","Description","TableCodeID","TableCode","Group","Entity",TableCode,RowCount
+"1","58ab9df51137bb175c03a62b","HES","HES tables","Material Standard of Living - Social Participation","327","TABLECODE327","People","Household",327,112
+"2","58ab9df51137bb175c03a62c","HES","HES tables","Material Standard of Living - Ownership","328","TABLECODE328","People","Household",328,112
+"3","58ab9df41137bb175c03a629","Employment and unemployment","Employment and unemployment tables","Filled Jobs by ANZSIC Group, Sex and Employment ","7051","TABLECODE7051","Economy","Industry",7051,22644
+"4","58ab9df41137bb175c03a62a","Employment and unemployment","Employment and unemployment tables","Key Labour Force Measures by Qualification, Age and Sex","7080","TABLECODE7080","People","Individual",7080,179712
+"5","58ab9df41137bb175c03a601","Agriculture","Agriculture tables","Forestry by Regional Council","7421","TABLECODE7421","Economy","Industry",7421,814
+"6","58ab9df41137bb175c03a602","Agriculture","Agriculture tables","Horticulture by Regional Council","7422","TABLECODE7422","Economy","Industry",7422,967
+"7","58ab9df41137bb175c03a603","Agriculture","Agriculture tables","Livestock Numbers by Regional Council","7423","TABLECODE7423","Economy","Industry",7423,10826
+"8","58ab9df51137bb175c03a64d","Population estimates","Population estimates tables","Subnational population estimates (RC, AU), by age and sex, at 30 June 1996, 2001, 2006-16 (2017 boundaries) ","7501","TABLECODE7501","People","Individual",7501,1829880
+"9","58ab9df51137bb175c03a64e","Population estimates","Population estimates tables","Subnational population estimates (TA, AU), by age and sex, at 30 June 1996, 2001, 2006-16 (2017 boundaries) ","7502","TABLECODE7502","People","Individual",7502,1892670
+"10","58ab9df51137bb175c03a64f","Population estimates","Population estimates tables","Subnational population estimates (TA, ward), by age and sex, at 30 June 2013-15 (2015 boundaries) ","7505","TABLECODE7505","People","Individual",7505,86664
+"11","58ab9df51137bb175c03a650","Population estimates","Population estimates tables","Subnational population estimates (TA, CB), by age and sex, at 30 June 2013-15 (2015 boundaries) ","7506","TABLECODE7506","People","Individual",7506,70656
+"12","58ab9df51137bb175c03a651","Population estimates","Population estimates tables","Subnational population estimates (TA, subdivision), by age and sex, at 30 June 2013-15 (2015 boundaries) ","7507","TABLECODE7507","People","Individual",7507,57408
+"13","58ab9df51137bb175c03a652","Population estimates","Population estimates tables","Subnational population estimates (RC, constituency), by age and sex, at 30 June 2013-15 (2015 boundaries) ","7508","TABLECODE7508","People","Individual",7508,22080
+"14","58ab9df51137bb175c03a653","Population estimates","Population estimates tables","Subnational population estimates (DHB, DHB constituency), by age and sex, at 30 June 2006-15 (2015 boundaries) ","7509","TABLECODE7509","People","Individual",7509,33396
+"15","58ab9df51137bb175c03a654","Population estimates","Population estimates tables","Subnational population component changes and median age (RC, TA), at 30 June 2013-16 (2017 boundaries) ","7510","TABLECODE7510","People","Individual",7510,1728
+"16","58ab9df51137bb175c03a655","Population estimates","Population estimates tables","Estimated resident population (ERP), national population by ethnic group, age, and sex, 30 June 1996, 2001, 2006, and 2013 ","7511","TABLECODE7511","People","Individual",7511,8280
+"17","58ab9df51137bb175c03a656","Population estimates","Population estimates tables","Estimated resident population (ERP), subnational population by ethnic group, age, and sex, at 30 June 1996, 2001, 2006, and 2013","7512","TABLECODE7512","People","Individual",7512,3527280
+"18","58ab9df51137bb175c03a657","Population estimates","Population estimates tables","Estimated resident population (ERP), adjustments to derive ERP at 30 June 2013 (from census usually resident population) ","7513","TABLECODE7513","People","Individual",7513,1144
+"19","58ab9df51137bb175c03a658","Population estimates","Population estimates tables","Subnational population estimates (UA, AU), by age and sex, at 30 June 1996, 2001, 2006-16 (2017 boundary) ","7541","TABLECODE7541","People","Individual",7541,1949181
+"20","58ab9df51137bb175c03a62d","HES","HES tables","Household expenditure for group, subgroup and class","7551","TABLECODE7551","People","Household",7551,1863
+"21","58ab9df51137bb175c03a62e","HES","HES tables","Household expenditure for group and subgroup by broad region","7552","TABLECODE7552","People","Household",7552,3456
+"22","58ab9df51137bb175c03a62f","HES","HES tables","Household expenditure for group and subgroup by household income group","7553","TABLECODE7553","People","Household",7553,6336
+"23","58ab9df51137bb175c03a630","HES","HES tables","Household expenditure for group and subgroup by number of people in household","7554","TABLECODE7554","People","Household",7554,3456
+"24","58ab9df51137bb175c03a631","HES","HES tables","Household expenditure for group and subgroup by principal source of income","7555","TABLECODE7555","People","Household",7555,4608
+"25","58ab9df51137bb175c03a632","HES","HES tables","Household expenditure for group and subgroup by household composition and number of dependent children","7556","TABLECODE7556","People","Household",7556,6336
+"26","58ab9df51137bb175c03a633","HES","HES tables","Household expenditure for group and subgroup by tenure of household","7557","TABLECODE7557","People","Household",7557,7488
+"27","58ab9df51137bb175c03a63f","Industry sectors","Tourism","Domestic Travel Survey: Accommodation","7578","TABLECODE7578","","",7578,630504
+"28","58ab9df51137bb175c03a640","Industry sectors","Tourism","Domestic Travel Survey: Trips ","7579","TABLECODE7579","","",7579,519990
+"29","58ab9df51137bb175c03a641","Industry sectors","Tourism","Domestic Travel Survey: Visitor spend ","7580","TABLECODE7580","","",7580,1502092
+"30","58ab9df51137bb175c03a642","Industry sectors","Tourism","Domestic Travel Survey: Activities","7581","TABLECODE7581","","",7581,3247
+"31","58ab9df41137bb175c03a611","Business Operations","Business Operations Tables","Module A Business Operations","7620","TABLECODE7620","Economy","Business",7620,68283
+"32","58ab9df41137bb175c03a612","Business Operations ","Business Operations Tables","Module B Innovation","7621","TABLECODE7621","Economy","Business",7621,48635
+"33","58ab9df41137bb175c03a613","Business Operations ","Business Operations Tables","Module B ICT","7622","TABLECODE7622","Economy","Business",7622,26553
+"34","58ab9df41137bb175c03a614","Business Operations ","Business Operations Tables","Module C Business Practices","7623","TABLECODE7623","Economy","Business",7623,27015
+"35","58ab9df41137bb175c03a615","Business Operations ","Business Operations Tables","Module C Employment practices","7624","TABLECODE7624","Economy","Business",7624,5639
+"36","58ab9df41137bb175c03a616","Business Operations ","Business Operations Tables","Module C International Engagement","7625","TABLECODE7625","Economy","Business",7625,17642
+"37","58ab9df41137bb175c03a617","Business Operations ","Business Operations Tables","Module C Business Strategy and Skills","7626","TABLECODE7626","Economy","Business",7626,17237
+"38","58ab9df41137bb175c03a618","Business Operations ","Business Operations Tables","Module C Price and wage setting","7627","TABLECODE7627","Economy","Business",7627,13767
+"39","58ab9df41137bb175c03a619","Business Operations ","Business Operations Tables","Module D Financial conditions","7628","TABLECODE7628","Economy","Business",7628,9172
+"40","58ab9df41137bb175c03a61a","Business Operations ","Business Operations Tables","Module C Regulation","7629","TABLECODE7629","Economy","Business",7629,15155
+"41","58ab9df41137bb175c03a61b","Business Operations ","Business Operations Tables","Module C Skill needs and recruitment","7630","TABLECODE7630","Economy","Business",7630,6926
+"42","58ab9df41137bb175c03a61c","Business Operations ","Business Operations Tables","Module C Skills Acquisition","7631","TABLECODE7631","Economy","Business",7631,12304
+"43","58ab9df31137bb175c03a5fe","2013 Census","Population","Age by sex, for the census usually resident population count, 1996, 2001, 2006, and 2013 Censuses (RC, TA, AU)","8001","TABLECODE8001","People","Individual",8001,3666534
+"44","58ab9df41137bb175c03a5ff","2013 Census","Population","Age by sex, for the census night population count, 1996, 2001, 2006, and 2013 Censuses (RC, TA, AU) ","8002","TABLECODE8002","People","Individual",8002,3641352
+"45","58ab9df41137bb175c03a600","2013 Census","Population","Usual residence five years ago indicator (2008) by age group and sex, for the census usually resident population count, 2013 Census (RC, TA, AU)","8004","TABLECODE8004","People","Individual",8004,967632
+"46","58ab9df21137bb175c03a5f9","2013 Census","Culture and Identity","Ethnic group (total responses) by age group and sex, for the census usually resident population count, 2001, 2006, and 2013 Censuses (RC, TA)","8021","TABLECODE8021","People","Individual",8021,1920600
+"47","58ab9df31137bb175c03a5fa","2013 Census","Culture and Identity","Ethnic group (grouped total responses) by age group and sex, for the census usually resident population count, 2001, 2006, and 2013 (RC, TA, AU) ","8022","TABLECODE8022","People","Individual",8022,3991482
+"48","58ab9df31137bb175c03a5fb","2013 Census","Culture and Identity","Birthplace (detailed overseas born) and years since arrival in New Zealand by sex, for the overseas born census usually resident population count, 2001, 2006, and 2013 Censuses (RC, TA)","8043","TABLECODE8043","People","Individual",8043,174240
+"49","58ab9df31137bb175c03a5fd","2013 Census","Income","Total household income (grouped) by household composition, for households in occupied private dwellings, 2006 and 2013 Censuses (RC, TA, AU)","8135","TABLECODE8135","People","Household",8135,307328
+"50","58ab9df31137bb175c03a5fc","2013 Census","Education and training","Highest qualification by age group and sex, for the census usually resident population count aged 15 years and over, 2013 Census (RC, TA, AU)","8241","TABLECODE8241","People","Individual",8241,1069488
