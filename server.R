@@ -42,9 +42,10 @@ shinyServer(function(input, output) {
                           paste(names(requestParams),
                                 requestParams,sep="=",collapse="&"));
     resultText <- getURL(url=requestCode);
+    resultText <- gsub(":null",":\"\"",resultText); ## hack to work around "null" appearing in JSON
     result <- fromJSON(resultText)$value;
-    res.table <- sapply(result,function(x){data.frame(x,stringsAsFactors = FALSE)});
-    return((t(res.table)));
+    res.table <- do.call(rbind, lapply(result, data.frame, stringsAsFactors=FALSE));
+    return((res.table));
   });
   output$statsGraph <- renderPlot({
     par(mfrow=c(2,1));
@@ -66,12 +67,10 @@ shinyServer(function(input, output) {
     if(input$tablecode != "Catalogue"){
       codeID <- paste0("TABLECODE",input$tablecode);
     }
-    result <- fromJSON(getURL(url=paste0(requestURL,codeID,"?",
+    result <- fromJSON(gsub(":null",":\"\"",getURL(url=paste0(requestURL,codeID,"?",
                                          paste(names(requestParams),
-                                               requestParams,sep="=",collapse="&"))))$value;
-    
-    res.df <- data.frame(t(sapply(result,function(x){data.frame(x,stringsAsFactors = FALSE)})));
-    res.df <- data.frame(sapply(res.df, unlist));
+                                               requestParams,sep="=",collapse="&")))))$value;
+    res.df <- do.call(rbind, lapply(result, data.frame, stringsAsFactors=FALSE));
     write.csv(res.df,"res.csv");
     if(!is.null(res.df$Value)){
       hist(as.numeric(res.df$Value), main="Value", col="red");
