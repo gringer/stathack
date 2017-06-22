@@ -11,7 +11,8 @@ if(file.exists("api_key.txt")){
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
-  
+  values <- reactiveValues();
+  values$requestCode <- "";
   output$dataTableName <- renderUI({
     if(input$tablecode == "Catalogue"){
       tags$h3("Data Set Overview");
@@ -41,11 +42,15 @@ shinyServer(function(input, output) {
     requestCode <- paste0(requestURL,codeID,"?",
                           paste(names(requestParams),
                                 requestParams,sep="=",collapse="&"));
-    resultText <- getURL(url=requestCode);
-    resultText <- gsub(":null",":\"\"",resultText); ## hack to work around "null" appearing in JSON
-    result <- fromJSON(resultText)$value;
-    res.table <- do.call(rbind, lapply(result, data.frame, stringsAsFactors=FALSE));
-    return((res.table));
+    if(requestCode != values$requestCode){
+      values$requestCode <- requestCode;
+      resultText <- getURL(url=requestCode);
+      resultText <- gsub(":null",":\"\"",resultText); ## hack to work around "null" appearing in JSON
+      result <- fromJSON(resultText)$value;
+      res.df <- do.call(rbind, lapply(result, data.frame, stringsAsFactors=FALSE));
+      values$data <- res.df;
+    }
+    return(values$data);
   });
   output$statsGraph <- renderPlot({
     par(mfrow=c(2,1));
@@ -67,14 +72,31 @@ shinyServer(function(input, output) {
     if(input$tablecode != "Catalogue"){
       codeID <- paste0("TABLECODE",input$tablecode);
     }
-    result <- fromJSON(gsub(":null",":\"\"",getURL(url=paste0(requestURL,codeID,"?",
-                                         paste(names(requestParams),
-                                               requestParams,sep="=",collapse="&")))))$value;
-    res.df <- do.call(rbind, lapply(result, data.frame, stringsAsFactors=FALSE));
-    write.csv(res.df,"res.csv");
+    requestCode <- paste0(requestURL,codeID,"?",
+                          paste(names(requestParams),
+                                requestParams,sep="=",collapse="&"));
+    if(requestCode != values$requestCode){
+      values$requestCode <- requestCode;
+      resultText <- getURL(url=requestCode);
+      resultText <- gsub(":null",":\"\"",resultText); ## hack to work around "null" appearing in JSON
+      result <- fromJSON(resultText)$value;
+      res.df <- do.call(rbind, lapply(result, data.frame, stringsAsFactors=FALSE));
+      values$data <- res.df;
+    }
+    res.df <- values$data;
     if(!is.null(res.df$Value)){
       hist(as.numeric(res.df$Value), main="Value", col="red");
     }
     barplot(table(res.df[,1]), main=colnames(res.df)[1]);
   });
+  output$downloadCSV <- downloadHandler(
+    filename = function() { 
+      paste0(input$tablecode, '.csv', sep='') 
+    },
+    content = function(file) {
+      write.csv(values$data, file);
+    },
+    contentType = "text/csv"
+  )
+  
 })

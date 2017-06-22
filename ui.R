@@ -28,7 +28,8 @@ shinyUI(pageWithSidebar(
                    value=1000, step = 100),
 #      numericInput("skip", "Skip first n records", 
 #                   value=0, step = 100),
-      checkboxInput("count", label = "Include record counts")
+      checkboxInput("count", label = "Include record counts"),
+      downloadButton('downloadCSV', 'Download CSV')
     ),
     
     # Show a plot of the generated distribution
